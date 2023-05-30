@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Pantry Pal</string>
+
+    //splash screen
+    <string name="nama_aplikasi">PantryPal</string>
+    <string name="description_splash_screen_1">Need Pantry, Search Easy, on Your Phone</string>
+    <string name="description_splash_screen_2">Bingung mencari bahan makanan dipasar?</string>
+    <string name="description_splash_screen_3">Punya uang segini bisa dapat apa ya?</string>
+    <string name="description_splash_screen_4">Dengan Pantrypal rasakan kemudahan mencari bahan makanan hanya dengan satu aplikasi</string>
+    <string name="btn_mulai_splash_screen">Mulai</string>
+
+    //home
+    <string name="deskripsi_home">Bingung cari Resep dan Bahan?, yuk\nmasukkan nominal uang kamu\nkita bantu carikan!</string>
+    <string name="btn_home">Cari</string>
+    <string name="tab_layout">Tab Layout</string>
+
+    //detail
+    <string name="food_name">Food Name</string>
+    <string name="desc_food">Desc Food</string>
+    <string name="yelow_button">Sajian 1 Porsi</string>
+
+    //fragment
+    <string name="food_material">Bahan Makanan</string>
+    <string name="food_recipe">Resep Makanan</string>
+    <string name="fitur_soon">Coming Soon</string>
+
+    //edit text
+    <string name="error">Masukkan nominal > 15 Ribu</string>
+    <string name="empty">Masukkan Nominal</string>
+    <string name="text_in_edit_text">Rp.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
