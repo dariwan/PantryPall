@@ -40,15 +40,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/food_name" />
 
-    <com.example.pantrypal.view.customview.ButtonYellowCustomView
-        android:layout_width="150dp"
+    <TextView
+        style="@style/yelow"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_yelow"
         android:text="@string/yelow_button"
+        android:textColor="@color/black"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
-        android:clickable="false"
-        android:layout_marginLeft="20dp"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 

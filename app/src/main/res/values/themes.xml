@@ -13,4 +13,16 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="yelow">
+        <item name="background">
+            @color/yelow
+        </item>
+        <item name="cornerRadius">
+            20dp
+        </item>
+        <item name="android:padding">
+            10dp
+        </item>
+    </style>
 </resources>

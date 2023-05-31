@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="570dp"
         android:src="@drawable/shape_white"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,16 +20,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.example.pantrypal.view.customview.EditTextCustomView
+        android:id="@+id/edt_nominal"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="@string/fitur_soon"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="20dp"
+        android:inputType="number"
+        android:padding="15dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <com.example.pantrypal.view.customview.ButtonHome
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:text="@string/btn_home"
+        android:textAlignment="center"
+        android:elevation="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_nominal"
+        app:layout_constraintStart_toStartOf="@+id/edt_nominal"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nominal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

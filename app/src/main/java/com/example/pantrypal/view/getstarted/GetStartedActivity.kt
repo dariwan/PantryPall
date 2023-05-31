@@ -16,7 +16,6 @@ class GetStartedActivity : AppCompatActivity() {
         binding = ActivityGetStartedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.hide()
 
         binding.buttonGetStarted.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
