@@ -15,9 +15,14 @@
     <string name="tab_layout">Tab Layout</string>
 
     //detail
+    //list food recipe
     <string name="food_name">Food Name</string>
     <string name="desc_food">Desc Food</string>
     <string name="yelow_button">Sajian 1 Porsi</string>
+
+    //list food material
+    <string name="material_name">Material Name</string>
+
 
     //fragment
     <string name="food_material">Bahan Makanan</string>
