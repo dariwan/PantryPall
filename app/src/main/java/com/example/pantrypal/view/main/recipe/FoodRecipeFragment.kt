@@ -1,4 +1,4 @@
-package com.example.pantrypal.view.main
+package com.example.pantrypal.view.main.recipe
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

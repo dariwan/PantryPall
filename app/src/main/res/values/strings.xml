@@ -22,6 +22,7 @@
 
     //list food material
     <string name="material_name">Material Name</string>
+    <string name="material_price">Material Price</string>
 
 
     //fragment

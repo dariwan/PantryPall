@@ -3,9 +3,8 @@ package com.example.pantrypal.adapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.pantrypal.view.main.FoodMaterialFragment
-import com.example.pantrypal.view.main.FoodRecipeFragment
-import com.example.pantrypal.view.main.MainActivity
+import com.example.pantrypal.view.main.material.FoodMaterialFragment
+import com.example.pantrypal.view.main.recipe.FoodRecipeFragment
 
 class SectionsPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(activity) {
     override fun getItemCount(): Int {
@@ -15,8 +14,8 @@ class SectionsPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(ac
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
         when(position){
-            0 -> fragment = FoodRecipeFragment()
-            1 -> fragment = FoodMaterialFragment()
+            0 -> fragment = FoodMaterialFragment()
+            1 -> fragment = FoodRecipeFragment()
         }
         return fragment as Fragment
     }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/hijau"
-    tools:context=".view.main.FoodMaterialFragment">
+    tools:context=".view.main.material.FoodMaterialFragment">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -33,15 +33,26 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <com.example.pantrypal.view.customview.ButtonHome
+        android:id="@+id/buttonHome"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textAllCaps="false"
+        android:elevation="30dp"
         android:text="@string/btn_home"
         android:textAlignment="center"
-        android:elevation="30dp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="@+id/edt_nominal"
         app:layout_constraintStart_toStartOf="@+id/edt_nominal"
         app:layout_constraintTop_toBottomOf="@+id/edt_nominal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_material_food"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHome"
+        tools:listitem="@layout/list_food_material"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
