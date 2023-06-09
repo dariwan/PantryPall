@@ -51,10 +51,10 @@ class EditTextCustomView : AppCompatEditText, View.OnTouchListener{
 
                 val inputValue = p0.toString()
 
-                when {
-                    inputValue.length <= 4 -> error =
-                        context.getString(R.string.error)
-                }
+//                when {
+//                    inputValue.length <= 4 -> error =
+//                        context.getString(R.string.error)
+//                }
             }
 
             override fun afterTextChanged(p0: Editable?) {

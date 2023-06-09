@@ -1,9 +1,6 @@
 package com.example.pantrypal.data.apihelper
 
-import com.example.pantrypal.data.response.AllMaterialResponse
-import com.example.pantrypal.data.response.MaterialItem
-import com.example.pantrypal.data.response.MaterialRequest
-import com.example.pantrypal.data.response.MaterialResponse
+import com.example.pantrypal.data.response.*
 import okhttp3.Request
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -23,5 +20,10 @@ interface ApiService {
     fun searchMaterialWithPrice(
        @Body request: MaterialRequest,
     ): Call<MaterialResponse>
+
+    @POST("Dashboard/resep/category")
+    fun searchRecipeWithCategory(
+        @Body request: CategoryRequest,
+    ): Call<RecipeResponse>
 
 }

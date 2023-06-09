@@ -12,4 +12,5 @@
     <color name="yelow">#F69E09</color>
     <color name="grey">#E3E0E0</color>
     <color name="red">#D60000</color>
+    <color name="transparan">#00FFFFFF</color>
 </resources>

@@ -75,6 +75,6 @@ class MaterialFoodRepository private constructor(
                 INSTANCE ?: MaterialFoodRepository(apiService, context)
             }.also { INSTANCE = it }
 
-        private const val TAG = "RecipeRepository"
+        private const val TAG = "MaterialRepository"
     }
 }

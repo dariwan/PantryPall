@@ -19,16 +19,22 @@
     <string name="food_name">Food Name\nFood Name</string>
     <string name="desc_food">Desc Food\nDesc Food\nDesc Food</string>
     <string name="yelow_button">Sajian 1 Porsi</string>
+    <string name="bahan">Bahan - Bahan</string>
+    <string name="step">Langkah - Langkah</string>
+    <string name="lorem_ipsum">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, nisl quis faucibus tincidunt, elit erat consectetur elit, at placerat risus tellus in est. Nulla posuere, risus a facilisis semper, turpis dui tristique lacus, id dapibus lorem mauris sit amet arcu. Maecenas pellentesque arcu id justo sollicitudin facilisis. In consectetur, risus at efficitur fringilla, mauris metus fringilla arcu, eget tempus ex velit sed nulla. Fusce condimentum diam ligula, at consectetur dui vestibulum id. Sed vitae dolor nec erat cursus rhoncus non eget lorem. Vivamus cursus, quam vel dapibus rhoncus, lacus metus aliquam massa, sed eleifend ex nisi eget orci. Sed consectetur nisl vel laoreet feugiat. Donec suscipit justo dui, ac consequat turpis tristique et. Suspendisse potenti. Pellentesque pellentesque ex a justo malesuada, et lacinia odio suscipit. Proin faucibus, arcu vitae iaculis posuere, ex purus sodales lacus, vel facilisis diam massa in tellus. Cras eu magna id enim interdum facilisis. Vivamus blandit euismod arcu, nec posuere felis lacinia at. Nam fringilla, tortor et varius auctor, velit tortor dapibus lorem, sed eleifend orci ex vitae lacus.</string>
 
     //list food material
     <string name="material_name">Material Name</string>
     <string name="material_price">Material Price</string>
 
 
+
     //fragment
     <string name="food_material">Bahan Makanan</string>
     <string name="food_recipe">Resep Makanan</string>
     <string name="fitur_soon">Coming Soon</string>
+    <string name="hint_material">Masukkan Nominal</string>
+    <string name="hint_category">Masukan Category [Terjangkau, Murah, Mahal]</string>
 
     //edit text
     <string name="error">Masukkan nominal > 15 Ribu</string>

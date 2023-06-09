@@ -32,11 +32,6 @@ class FoodMaterialFragment : Fragment() {
 
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -97,20 +92,9 @@ class FoodMaterialFragment : Fragment() {
                         }
                     }
                 }
-//                searchViewModel.material.observe(viewLifecycleOwner) { result ->
-//                    when (result) {
-//                        is com.example.pantrypal.data.utils.Result.Loading -> {}
-//                        is com.example.pantrypal.data.utils.Result.Success -> showMaterial(result.data)
-//                        is com.example.pantrypal.data.utils.Result.Error -> showError(result.error)
-//                    }
-//                }
             }
 
         }
-    }
-
-    private fun showError(error: String) {
-        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
     }
 
     private fun showMaterial(material: List<MaterialItem>) {
@@ -120,12 +104,6 @@ class FoodMaterialFragment : Fragment() {
         adapter.submitList(material)
 
     }
-
-    private fun showLoading() {
-
-
-    }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
