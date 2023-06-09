@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     companion object{
         @StringRes
         private val TAB_TITLES = intArrayOf(
-            R.string.food_recipe,
-            R.string.food_material
+            R.string.food_material,
+            R.string.food_recipe
         )
     }
 }

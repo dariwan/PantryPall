@@ -16,8 +16,8 @@
 
     //detail
     //list food recipe
-    <string name="food_name">Food Name</string>
-    <string name="desc_food">Desc Food</string>
+    <string name="food_name">Food Name\nFood Name</string>
+    <string name="desc_food">Desc Food\nDesc Food\nDesc Food</string>
     <string name="yelow_button">Sajian 1 Porsi</string>
 
     //list food material

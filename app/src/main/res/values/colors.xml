@@ -10,4 +10,6 @@
     <color name="hijau">#0FB881</color>
     <color name="hijau_tua">#0C9367</color>
     <color name="yelow">#F69E09</color>
+    <color name="grey">#E3E0E0</color>
+    <color name="red">#D60000</color>
 </resources>

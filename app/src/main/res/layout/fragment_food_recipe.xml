@@ -12,36 +12,55 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="570dp"
-        android:src="@drawable/shape_white"
         android:layout_marginTop="20dp"
+        android:src="@drawable/shape_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.992" />
 
-    <com.example.pantrypal.view.customview.EditTextCustomView
-        android:id="@+id/edt_nominal"
-        android:layout_width="350dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="20dp"
-        android:inputType="number"
-        android:padding="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="80dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/error_image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:alpha="0.5"
+        android:src="@drawable/ic_sad"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
-    <com.example.pantrypal.view.customview.ButtonHome
-        android:layout_width="100dp"
+    <TextView
+        android:id="@+id/error_text_view"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textAllCaps="false"
-        android:text="@string/btn_home"
-        android:textAlignment="center"
-        android:elevation="30dp"
-        app:layout_constraintEnd_toEndOf="@+id/edt_nominal"
-        app:layout_constraintStart_toStartOf="@+id/edt_nominal"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nominal" />
+        android:alpha="0.5"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/error_image_view"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/error_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/error_image_view" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

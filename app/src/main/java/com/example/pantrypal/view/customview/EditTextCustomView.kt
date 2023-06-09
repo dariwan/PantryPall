@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import android.widget.EditText
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import com.example.pantrypal.R
@@ -39,9 +38,6 @@ class EditTextCustomView : AppCompatEditText, View.OnTouchListener{
 
 
         background = ContextCompat.getDrawable(context, R.drawable.edit_text)
-        val id = findViewById<EditText>(R.id.edt_nominal)
-        val existingText = context.getString(R.string.text_in_edit_text)
-        id.setText(existingText)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence, p1: Int, p2: Int, p3: Int) {
@@ -55,14 +51,8 @@ class EditTextCustomView : AppCompatEditText, View.OnTouchListener{
 
                 val inputValue = p0.toString()
 
-
-                if (p0?.length ?: 0 < existingText.length) {
-                    id.setText(existingText)
-                    id.setSelection(existingText.length)
-                }
-
                 when {
-                    inputValue.length < 8 -> error =
+                    inputValue.length <= 4 -> error =
                         context.getString(R.string.error)
                 }
             }
