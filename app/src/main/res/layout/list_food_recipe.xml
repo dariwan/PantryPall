@@ -84,14 +84,36 @@
             android:id="@+id/heart_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
             android:text="100"
             android:textColor="@color/red"
+            android:fontFamily="@font/poppinsmedium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/heart_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recipe_description" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:tint="@color/yelow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/heart_text_view"
             app:layout_constraintTop_toBottomOf="@+id/tv_recipe_description"
-            app:layout_constraintVertical_bias="0.0" />
+            app:srcCompat="@drawable/ic_category" />
+
+        <TextView
+            android:id="@+id/category_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/yelow"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recipe_description" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

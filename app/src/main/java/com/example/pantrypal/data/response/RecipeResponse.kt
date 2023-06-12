@@ -19,4 +19,8 @@ data class RecipeItem(
 
     @SerializedName("step")
     val step: String,
+
+    @SerializedName("kategori")
+    val kategori: String,
+
 )

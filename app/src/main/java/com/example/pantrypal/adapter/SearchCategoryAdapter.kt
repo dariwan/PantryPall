@@ -22,6 +22,7 @@ class SearchCategoryAdapter:
             fun bind(category: RecipeItem){
                 binding.tvRecipe.text = category.title
                 binding.heartTextView.text = category.loves.toString()
+                binding.categoryTextView.text = category.kategori.toString()
             }
 
     }
