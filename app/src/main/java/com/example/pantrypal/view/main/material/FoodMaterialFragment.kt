@@ -55,9 +55,6 @@ class FoodMaterialFragment : Fragment() {
         searchPrice()
     }
 
-    private fun setupRecyclerView() {
-
-    }
 
     private fun setupAction() {
         val adapter = FoodMaterialAdapter()

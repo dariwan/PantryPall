@@ -11,9 +11,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantrypal.R
 import com.example.pantrypal.adapter.SearchCategoryAdapter
+import com.example.pantrypal.adapter.SearchLoveAdapter
 import com.example.pantrypal.data.response.RecipeItem
 import com.example.pantrypal.databinding.FragmentFoodMaterialBinding
 import com.example.pantrypal.databinding.FragmentFoodRecipeBinding
+import com.google.android.material.chip.Chip
 
 
 class FoodRecipeFragment : Fragment() {
@@ -22,6 +24,10 @@ class FoodRecipeFragment : Fragment() {
 
     private val searchCategoryViewModel: SearchCategoryViewModel by viewModels {
         SearchCategoryViewModel.SearchFoodRecipeFactory(requireContext())
+    }
+
+    private val searchLoveViewModel: SearchLovesViewModel by viewModels {
+        SearchLovesViewModel.SearchLovesFoodRecipeFactory(requireContext())
     }
 
 
@@ -40,8 +46,9 @@ class FoodRecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //search category
+
         searchCategory()
+        setupChip()
     }
 
     private fun searchCategory() {
@@ -60,6 +67,7 @@ class FoodRecipeFragment : Fragment() {
                         }
                         is com.example.pantrypal.data.utils.Result.Success -> {
                             binding.progressBar.visibility = View.INVISIBLE
+                            binding.chipGroup.visibility = View.VISIBLE
                             showMaterial(it.data)
                         }
                     }
@@ -73,6 +81,52 @@ class FoodRecipeFragment : Fragment() {
         binding.rvRecipeFood.adapter = adapter
         binding.rvRecipeFood.layoutManager = LinearLayoutManager(requireContext())
         adapter.submitList(category)
+    }
+
+    private fun searchLove(query: Int){
+        val love = query
+        if (love != null){
+            searchLoveViewModel.sendLove(love).observe(requireActivity()){
+                when(it){
+                    is com.example.pantrypal.data.utils.Result.Loading -> {
+                        binding.progressBar.visibility = View.VISIBLE
+                    }
+                    is com.example.pantrypal.data.utils.Result.Error -> {
+                        binding.progressBar.visibility = View.INVISIBLE
+                        val error = it.error
+                        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
+                    }
+                    is com.example.pantrypal.data.utils.Result.Success -> {
+                        binding.progressBar.visibility = View.INVISIBLE
+                        binding.chipGroup.visibility = View.VISIBLE
+                        showLove(it.data)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun showLove(Loves: List<RecipeItem>) {
+        val adapter = SearchLoveAdapter()
+        binding.rvRecipeFood.adapter = adapter
+        binding.rvRecipeFood.layoutManager = LinearLayoutManager(requireContext())
+        adapter.submitList(Loves)
+
+    }
+
+    private fun setupChip(){
+        binding.chipKurangDari5.setOnClickListener {
+            searchLove(5)
+        }
+
+        binding.chip2KurangDari10.setOnClickListener {
+            searchLove(10)
+        }
+
+        binding.chipKurangDari20.setOnClickListener {
+            searchLove(20)
+        }
+
     }
 
 

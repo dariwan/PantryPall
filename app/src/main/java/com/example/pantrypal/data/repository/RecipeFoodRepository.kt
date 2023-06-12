@@ -43,6 +43,34 @@ class RecipeFoodRepository private constructor(
         return recipeLiveData
     }
 
+    fun getRecipeWithLoves(Loves: Int): LiveData<Result<List<RecipeItem>>> {
+        val loveLiveData = MutableLiveData<Result<List<RecipeItem>>>()
+        loveLiveData.value = com.example.pantrypal.data.utils.Result.Loading
+
+        val request = LoveRequest(Loves)
+        apiService.searchRecipeWithLoves(request).enqueue(object : Callback<RecipeResponse> {
+            override fun onResponse(
+                call: Call<RecipeResponse>,
+                response: Response<RecipeResponse>
+            ) {
+                if (response.isSuccessful){
+                    val material = response.body()?.recipe ?: emptyList()
+                    loveLiveData.value = com.example.pantrypal.data.utils.Result.Success(material)
+                }else{
+                    loveLiveData.value = com.example.pantrypal.data.utils.Result.Error("Gagal mendapatkan data resep")
+                    Log.e(RecipeFoodRepository.TAG, "Failed: Response Unsuccessful - ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<RecipeResponse>, t: Throwable) {
+                Log.e(RecipeFoodRepository.TAG, "onFailure: ${t.message}")
+                loveLiveData.value = com.example.pantrypal.data.utils.Result.Error("Terjadi kesalahan")
+            }
+
+        })
+        return loveLiveData
+    }
+
     companion object{
         @Volatile
         private var INSTANCE: RecipeFoodRepository? = null
