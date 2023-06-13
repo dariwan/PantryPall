@@ -22,7 +22,7 @@ class SearchLoveAdapter :RecyclerView.Adapter<SearchLoveAdapter.LovesViewHolder>
             binding.tvRecipe.text = category.title
             binding.heartTextView.text = category.loves.toString()
             binding.categoryTextView.text = category.kategori
-            binding.tvRecipeDescription.text = category.kategori
+            binding.tvRecipeDescription.text = category.deskripsi
             Glide.with(itemView.context)
                 .load(category.image)
                 .into(binding.imgFoodRecipe)
