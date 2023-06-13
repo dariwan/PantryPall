@@ -2,6 +2,7 @@ package com.example.pantrypal.view.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.example.pantrypal.R
 import com.example.pantrypal.databinding.ActivityDetailBinding
 
@@ -20,6 +21,8 @@ class DetailActivity : AppCompatActivity() {
         val name = intent.getStringExtra(NAME_EXTRA)
         val material = intent.getStringExtra(MATERIAL)
         val step = intent.getStringExtra(STEP)
+        val desc = intent.getStringExtra(DESCRIPTION_EXTRA)
+        val img = intent.getStringExtra(IMAGE_URL_EXTRA)
 
         val cleanMaterial = material?.replace("--", "\n")
         val cleanStep = step?.replace("--","\n\n")?.replace("?", "")
@@ -29,6 +32,10 @@ class DetailActivity : AppCompatActivity() {
         binding.foodName.text = name
         binding.tvBahan.text = cleanMaterial
         binding.tvStep.text = cleanStep
+        binding.descRecipe.text = desc
+        Glide.with(this)
+            .load(img)
+            .into(binding.imgFoodDetail)
     }
 
 

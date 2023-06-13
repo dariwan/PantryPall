@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.pantrypal.data.response.RecipeItem
 import com.example.pantrypal.databinding.ListFoodRecipeBinding
 import com.example.pantrypal.view.detail.DetailActivity
@@ -20,9 +21,12 @@ class SearchLoveAdapter :RecyclerView.Adapter<SearchLoveAdapter.LovesViewHolder>
         fun bind(category: RecipeItem){
             binding.tvRecipe.text = category.title
             binding.heartTextView.text = category.loves.toString()
-            binding.categoryTextView.text = category.kategori.toString()
+            binding.categoryTextView.text = category.kategori
+            binding.tvRecipeDescription.text = category.kategori
+            Glide.with(itemView.context)
+                .load(category.image)
+                .into(binding.imgFoodRecipe)
         }
-
     }
 
     override fun onCreateViewHolder(
@@ -44,12 +48,16 @@ class SearchLoveAdapter :RecyclerView.Adapter<SearchLoveAdapter.LovesViewHolder>
             intent.putExtra(DetailActivity.NAME_EXTRA, categories?.title)
             intent.putExtra(DetailActivity.MATERIAL, categories?.bahan)
             intent.putExtra(DetailActivity.STEP, categories?.step)
+            intent.putExtra(DetailActivity.DESCRIPTION_EXTRA, categories?.deskripsi)
+            intent.putExtra(DetailActivity.IMAGE_URL_EXTRA, categories?.image)
 
             val optionsCompact: ActivityOptionsCompat =
                 ActivityOptionsCompat.makeSceneTransitionAnimation(
                     holder.itemView.context as Activity,
                     Pair(holder.binding.foodRecipe, "name"),
-                    Pair(holder.binding.heartTextView, "love")
+                    Pair(holder.binding.heartTextView, "love"),
+                    Pair(holder.binding.tvRecipeDescription, "desc"),
+                    Pair(holder.binding.imgFoodRecipe, "img")
                 )
             holder.itemView.context.startActivity(intent, optionsCompact.toBundle())
         }

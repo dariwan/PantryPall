@@ -68,7 +68,13 @@ class FoodRecipeFragment : Fragment() {
                         is com.example.pantrypal.data.utils.Result.Success -> {
                             binding.progressBar.visibility = View.INVISIBLE
                             binding.chipGroup.visibility = View.VISIBLE
-                            showMaterial(it.data)
+
+                            if (category == "Terjangkau" || category == "terjangkau" || category == "Murah" || category == "murah" || category == "Mahal" || category == "mahal"){
+                                showMaterial(it.data)
+                            }else{
+                                Toast.makeText(requireContext(), "Input yang anda masukkan salah", Toast.LENGTH_SHORT).show()
+                                binding.rvRecipeFood.visibility = View.INVISIBLE
+                            }
                         }
                     }
                 }

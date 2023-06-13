@@ -23,4 +23,10 @@ data class RecipeItem(
     @SerializedName("kategori")
     val kategori: String,
 
+    @SerializedName("deskripsi")
+    val deskripsi: String,
+
+    @SerializedName("image")
+    val image: String,
+
 )

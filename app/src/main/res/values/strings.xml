@@ -42,7 +42,7 @@
     <string name="text_in_edit_text">Rp.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="_5"><![CDATA[< 5]]></string>
+    <string name="_5"><![CDATA[ < 5]]></string>
     <string name="_10"><![CDATA[< 10]]></string>
     <string name="_20"><![CDATA[< 20]]></string>
 </resources>
