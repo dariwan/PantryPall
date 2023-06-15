@@ -18,7 +18,10 @@ With PantryPall, you will discover the convenience of finding the best cooking i
  - [Paging](https://developer.android.com/topic/libraries/architecture/paging/v3-overview?hl=id)
  - [Glide](https://github.com/bumptech/glide)
 
- ## Demo App
- 
+ ## Screenshot App
+ ![1](https://github.com/dariwan/PantryPall/assets/81599190/36f493fa-72da-4aa2-b1a1-33cfeb73eb4e)
+ ![2](https://github.com/dariwan/PantryPall/assets/81599190/e0c2b9f9-4bdc-44e8-be44-0f136bed0db5)
+ ![3](https://github.com/dariwan/PantryPall/assets/81599190/c5a2d678-722b-4822-8ef5-ea739752f81d)
 
-![OK](https://drive.google.com/file/d/1I07u_vVVrFwoEhpiSj8LxlESoVWh9_su/view?usp=sharing)
+
+
