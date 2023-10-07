@@ -7,15 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantrypal.R
 import com.example.pantrypal.adapter.SearchCategoryAdapter
 import com.example.pantrypal.adapter.SearchLoveAdapter
 import com.example.pantrypal.data.response.RecipeItem
-import com.example.pantrypal.databinding.FragmentFoodMaterialBinding
 import com.example.pantrypal.databinding.FragmentFoodRecipeBinding
-import com.google.android.material.chip.Chip
 
 
 class FoodRecipeFragment : Fragment() {

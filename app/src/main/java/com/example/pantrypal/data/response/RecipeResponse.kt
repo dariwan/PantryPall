@@ -6,7 +6,6 @@ data class RecipeResponse(
     @SerializedName("data")
     val recipe: List<RecipeItem>
 )
-
 data class RecipeItem(
     @SerializedName("title")
     val title: String,

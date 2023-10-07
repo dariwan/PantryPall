@@ -1,13 +1,9 @@
 package com.example.pantrypal.view.main.material
 
 import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.*
 import com.example.pantrypal.data.di.Injection
 import com.example.pantrypal.data.repository.MaterialFoodRepository
-import com.example.pantrypal.data.response.MaterialItem
-import kotlinx.coroutines.launch
-import okhttp3.RequestBody
 
 class SearchPriceViewModel(private val materialFoodRepository: MaterialFoodRepository): ViewModel() {
 
@@ -22,6 +18,4 @@ class SearchPriceViewModel(private val materialFoodRepository: MaterialFoodRepos
             throw IllegalArgumentException("Unknown ViewModel class")
         }
     }
-
-
 }

@@ -27,51 +27,54 @@ class MaterialFoodRepository private constructor(
 ) {
 
 
-    fun getAllMaterial(): LiveData<PagingData<AllMaterialResponse.ListMaterial>>{
+    fun getAllMaterial(): LiveData<PagingData<AllMaterialResponse.ListMaterial>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 5
             ),
             pagingSourceFactory = {
-                MaterialPagingSource(apiService, context)
+                MaterialPagingSource(apiService)
             }
         ).liveData
     }
 
-    fun getMaterialWithPrice(Harga: Int): LiveData<com.example.pantrypal.data.utils.Result<List<MaterialItem>>>{
-        val materialLiveData = MutableLiveData<com.example.pantrypal.data.utils.Result<List<MaterialItem>>>()
+    fun getMaterialWithPrice(Harga: Int): LiveData<com.example.pantrypal.data.utils.Result<List<MaterialItem>>> {
+        val materialLiveData =
+            MutableLiveData<com.example.pantrypal.data.utils.Result<List<MaterialItem>>>()
         materialLiveData.value = com.example.pantrypal.data.utils.Result.Loading
 
         val request = MaterialRequest(Harga)
-        apiService.searchMaterialWithPrice(request).enqueue(object : Callback<MaterialResponse>{
+        apiService.searchMaterialWithPrice(request).enqueue(object : Callback<MaterialResponse> {
             override fun onResponse(
                 call: Call<MaterialResponse>,
                 response: Response<MaterialResponse>
             ) {
-                if (response.isSuccessful){
+                if (response.isSuccessful) {
                     val material = response.body()?.material ?: emptyList()
-                    materialLiveData.value = com.example.pantrypal.data.utils.Result.Success(material)
-                }else{
-                    materialLiveData.value = com.example.pantrypal.data.utils.Result.Error("Gagal mendapatkan data bahan")
+                    materialLiveData.value =
+                        com.example.pantrypal.data.utils.Result.Success(material)
+                } else {
+                    materialLiveData.value =
+                        com.example.pantrypal.data.utils.Result.Error("Gagal mendapatkan data bahan")
                     Log.e(TAG, "Failed: Response Unsuccessful - ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<MaterialResponse>, t: Throwable) {
                 Log.e(TAG, "onFailure: ${t.message}")
-                materialLiveData.value = com.example.pantrypal.data.utils.Result.Error("Terjadi kesalahan")
+                materialLiveData.value =
+                    com.example.pantrypal.data.utils.Result.Error("Terjadi kesalahan")
             }
-
         })
         return materialLiveData
     }
 
-    companion object{
+    companion object {
         @Volatile
         private var INSTANCE: MaterialFoodRepository? = null
 
         fun getInstance(apiService: ApiService, context: Context) =
-            INSTANCE ?: synchronized(this){
+            INSTANCE ?: synchronized(this) {
                 INSTANCE ?: MaterialFoodRepository(apiService, context)
             }.also { INSTANCE = it }
 

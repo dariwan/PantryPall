@@ -24,9 +24,6 @@ class GetStartedActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-
-    //first time enter aplikasi
     private fun isFirstTimeLaunch(){
         val sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()

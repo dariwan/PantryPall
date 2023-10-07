@@ -1,6 +1,5 @@
 package com.example.pantrypal.view.main.material
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,8 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantrypal.R
 import com.example.pantrypal.adapter.FoodMaterialAdapter
 import com.example.pantrypal.adapter.SearchPriceAdapter
-import com.example.pantrypal.data.apihelper.ApiConfig
-import com.example.pantrypal.data.apihelper.ApiService
 import com.example.pantrypal.data.response.MaterialItem
 import com.example.pantrypal.databinding.FragmentFoodMaterialBinding
 
@@ -49,8 +46,6 @@ class FoodMaterialFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //all data
         setupAction()
-
-
         //search
         searchPrice()
     }
@@ -63,9 +58,6 @@ class FoodMaterialFragment : Fragment() {
         viewModel.material.observe(requireActivity()){
             adapter.submitData(lifecycle, it)
         }
-//        binding.rvMaterialFood.adapter = adapter.withLoadStateFooter(
-//            footer = Loa
-//        )
     }
 
     private fun searchPrice(){

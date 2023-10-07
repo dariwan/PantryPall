@@ -13,9 +13,7 @@ import androidx.core.content.ContextCompat
 import com.example.pantrypal.R
 
 class EditTextCustomView : AppCompatEditText, View.OnTouchListener{
-
     private lateinit var searchButton: Drawable
-
     constructor(context: Context) : super(context) {
         init()
     }
@@ -35,7 +33,6 @@ class EditTextCustomView : AppCompatEditText, View.OnTouchListener{
         searchButton = ContextCompat.getDrawable(context, R.drawable.close) as Drawable
         // Menambahkan aksi kepada search button
         setOnTouchListener(this)
-
 
         background = ContextCompat.getDrawable(context, R.drawable.edit_text)
 

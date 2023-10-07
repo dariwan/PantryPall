@@ -8,7 +8,6 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.pantrypal.data.response.MaterialItem
 import com.example.pantrypal.data.response.RecipeItem
 import com.example.pantrypal.databinding.ListFoodRecipeBinding
 import com.example.pantrypal.view.detail.DetailActivity

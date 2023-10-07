@@ -1,18 +1,20 @@
 package com.example.pantrypal.data.paging
 
-import android.content.Context
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.pantrypal.data.apihelper.ApiService
 import com.example.pantrypal.data.response.AllMaterialResponse
 
-class MaterialPagingSource(
-    private val apiService: ApiService,
-    private val context: Context
-): PagingSource<Int, AllMaterialResponse.ListMaterial>() {
+class MaterialPagingSource(private val apiService: ApiService): PagingSource<Int, AllMaterialResponse.ListMaterial>() {
 
     private val PAGE_INDEX = 1
 
+    override fun getRefreshKey(state: PagingState<Int, AllMaterialResponse.ListMaterial>): Int? {
+        return state.anchorPosition?.let { anchorPosition ->
+            val anchorPage = state.closestPageToPosition(anchorPosition)
+            anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
+        }
+    }
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, AllMaterialResponse.ListMaterial> {
         return try {
             val position = params.key ?: PAGE_INDEX
@@ -26,13 +28,6 @@ class MaterialPagingSource(
             )
         } catch (exception : Exception){
             return LoadResult.Error(exception)
-        }
-    }
-
-    override fun getRefreshKey(state: PagingState<Int, AllMaterialResponse.ListMaterial>): Int? {
-        return state.anchorPosition?.let { anchorPosition ->
-            val anchorPage = state.closestPageToPosition(anchorPosition)
-            anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
         }
     }
 

@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.pantrypal.data.di.Injection
 import com.example.pantrypal.data.repository.RecipeFoodRepository
-import com.example.pantrypal.view.main.material.SearchPriceViewModel
 
 class SearchCategoryViewModel(private val recipeFoodRepository: RecipeFoodRepository): ViewModel() {
     fun sendCategory(category: String) = recipeFoodRepository.getRecipeWithCategory(category)

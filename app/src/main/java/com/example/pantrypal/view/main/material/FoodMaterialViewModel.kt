@@ -10,7 +10,6 @@ import androidx.paging.cachedIn
 import com.example.pantrypal.data.di.Injection
 import com.example.pantrypal.data.repository.MaterialFoodRepository
 import com.example.pantrypal.data.response.AllMaterialResponse
-import okhttp3.RequestBody
 
 class FoodMaterialViewModel(materialFoodRepository: MaterialFoodRepository, context: Context): ViewModel() {
     val material : LiveData<PagingData<AllMaterialResponse.ListMaterial>> = materialFoodRepository.getAllMaterial().cachedIn(viewModelScope)

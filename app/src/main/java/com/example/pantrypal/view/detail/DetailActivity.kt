@@ -3,7 +3,6 @@ package com.example.pantrypal.view.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.example.pantrypal.R
 import com.example.pantrypal.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {

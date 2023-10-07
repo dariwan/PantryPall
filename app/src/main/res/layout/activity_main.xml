@@ -7,59 +7,43 @@
     android:background="@color/hijau"
     tools:context=".view.main.MainActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
+            android:paddingTop="20dp"
+            android:text="@string/deskripsi_home"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsmedium"
-                android:paddingTop="20dp"
-                android:text="@string/deskripsi_home"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/hijau"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:tabIndicator="@drawable/tab_indicator"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorColor="@color/hijau_tua"
+            app:tabIndicatorGravity="stretch"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/white" />
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="300dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/hijau"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:tabIndicatorColor="@color/hijau_tua"
-                app:tabIndicator="@drawable/tab_indicator"
-                app:tabTextColor="@color/white"
-                app:tabIndicatorAnimationMode="elastic"
-
-                app:tabIndicatorGravity="stretch"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"/>
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/view_pager"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tabs"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.core.widget.NestedScrollView>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
