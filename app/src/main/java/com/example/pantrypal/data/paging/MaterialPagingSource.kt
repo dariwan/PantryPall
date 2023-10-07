@@ -19,7 +19,7 @@ class MaterialPagingSource(private val apiService: ApiService): PagingSource<Int
         return try {
             val position = params.key ?: PAGE_INDEX
             val param = params.loadSize
-            val response = apiService.getAllMaterial(position, param).data.toList()
+            val response = apiService.getAllMaterial(position, params.loadSize).data.toList()
 
             LoadResult.Page(
                 data = response,
